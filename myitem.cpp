@@ -36,6 +36,8 @@ void MyItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     pressed = true;
     update();
     QGraphicsItem::mousePressEvent(event);
+    qDebug() << "after pressing mouse key x=" << x() << ", y=" << y();
+    /**/
 }
 
 void MyItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -43,6 +45,8 @@ void MyItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     pressed = false;
     update();
     QGraphicsItem::mouseReleaseEvent(event);
+    qDebug() << "after releasing mouse key x=" << x() << ", y=" << y();
+    /**/
 }
 
 void MyItem::keyPressEvent(QKeyEvent *event)
@@ -57,4 +61,13 @@ void MyItem::keyPressEvent(QKeyEvent *event)
     } else if (event->key() == Qt::Key_Up) {
         setPos(x(),y()-10);
     }
+    qDebug() << "after pressing key x=" << x() << ", y=" << y();
 }
+
+void MyItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    update();
+    QGraphicsItem::mouseMoveEvent(event);
+    qDebug() << "after moving mouse key x=" << x() << ", y=" << y();
+
+}/**/

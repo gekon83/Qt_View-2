@@ -26,6 +26,7 @@ private:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
 };
 
 #endif // MYITEM_H
